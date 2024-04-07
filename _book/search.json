@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Visualization for Social Science",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "1  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Chang, Winston. 2018. R Graphics Cookbook: Practical Recipes for\nVisualizing Data. Second. Sebastopol, California: O’Reilly Media.\nhttps://r-graphics.org/.\n\n\nGillespie, Colin, and Robin Lovelace. 2016. Efficient r Programming:\nA Practical Guide to Smarter Programming. Sebastopol, California:\nO’Reilly Media. https://csgillespie.github.io/efficientR/.\n\n\nGrolemund, Garrett. 2014. Hands-on Programming with r: Write Your\nOwn Functions and Simulations. Sebastopol, California: O’Reilly\nMedia. https://rstudio-education.github.io/hopr/.\n\n\nGrolemund, Garrett, and Hadley Wickham. 2016. R for Data\nScience. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz/.\n\n\nLong, JD, and Paul Teetor. 2019. R Cookbook: Proven Recipes for Data\nAnalysis, Statistics, and Graphics. Second. Sebastopol, California:\nO’Reilly Media. https://rc2e.com/.\n\n\nMcmanus, Ian, and Paul Gesiak. 2014. “Experimenting with Mondrian:\nComparing the Method of Production with the Method of Choice.”\nIn. https://doi.org/10.13140/2.1.1561.2967.\n\n\nSilge, Julia, and David Robinson. 2017. Text Mining with r: A Tidy\nApproach. Sebastopol, California: O’Reilly Media. https://www.tidytextmining.com/.\n\n\nVenables, W. N., D. M. Smith, and the R Core Team. 2021. An\nIntroduction to r. https://cran.r-project.org/doc/manuals/R-intro.pdf.\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization: A Primer\non Making Informative and Compelling Figures. Sebastopol,\nCalifornia: O’Reilly Media. https://clauswilke.com/dataviz/.\n\n\nWilkinson, Leland. 2005. The Grammar of Graphics. 2nd ed. New\nYork: Springer-Verlag. https://www.springer.com/gp/book/9780387245447.\n\n\nXie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. R Markdown:\nThe Definitive Guide. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown.\n\n\nXie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. R\nMarkdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.\n\n\nZinovyev, iAndrei. 2010. “Data Visualization in Political and\nSocial Sciences.” In. https://arxiv.org/abs/1008.1188."
+  },
+  {
+    "objectID": "intro.html#why-visualize",
+    "href": "intro.html#why-visualize",
+    "title": "1  Introduction",
+    "section": "Why Visualize?",
+    "text": "Why Visualize?\nData visualization plays numerous roles in the social sciences, from summarizing large amounts of information in a small space, to supporting claims about patterns and relationships among a vast array of indicators of human behavior.\nZinovyev (Zinovyev 2010) identifies four types of visualizations in political science:\n\n\nStatistical graphics and infographics with extensive use of color, form, size, shape and style to superimpose many quantitative variables in the same chart or diagram\nGeographical information systems (GIS) to visualize geographically-linked data\nGraph visualization or network maps for representing relations between objects\nProjection of multidimensional data on low-dimensional screens with further visualization, data cartography\n\n\nThroughout this book, we will cover examples of from all of these types of visuals.\n\nAbout this Book\nIf you are in the Data Visualization course at IBEI, you will need it. If you are not, it might be useful anyway!\nTo keep things as simple as possible, the book follows this syntax:\n\npackages are placed inside a shaded box (e.g. ggplot2),\ncommon functions() are also inside a shaded box, and followed by parentheses (e.g. mutate() from tidyverse or class() from base R),\nless common functions() are the same, but the package is explicitly called :: (e.g. reshape2::melt()),\nshort R commands (e.g. %in%), are also shaded, non-R commands are in bold (e.g. Ctrl + p),\nthe common pipe operator %&gt;% will be used when possible in the code2 (i.e., we will mostly use the tidyverse syntax over base R).\n\n\n\nPrerequisites\nYou are not expected to have any familiarity with R at the beginning of the course, though some knowledge of statistics will be very helpful. We will cover the basics of working with R and RStudio during the first few sessions. Some tutorial videos on the basics of working with RStudio are available here. Similarly, you may also consult the following open-source books on R:3\n\nR Cookbook (Long and Teetor 2019)\nR for Data Science (Grolemund and Wickham 2016)\nR Graphics Cookbook (Chang 2018)\nEfficient R Programming (Gillespie and Lovelace 2016)\nHands-on Programming with R (Grolemund 2014)\nFundamentals of Data Visualization (Wilke 2019)\nText Mining with R (Silge and Robinson 2017)\nAn Introduction to R (Venables, Smith, and R Core Team 2021)\nR Markdown: The Definitive Guide (Xie, Allaire, and Grolemund 2018)\nR Markdown Cookbook (Xie, Dervieux, and Riederer 2020)\n\n\n\n\n\nChang, Winston. 2018. R Graphics Cookbook: Practical Recipes for Visualizing Data. Second. Sebastopol, California: O’Reilly Media. https://r-graphics.org/.\n\n\nGillespie, Colin, and Robin Lovelace. 2016. Efficient r Programming: A Practical Guide to Smarter Programming. Sebastopol, California: O’Reilly Media. https://csgillespie.github.io/efficientR/.\n\n\nGrolemund, Garrett. 2014. Hands-on Programming with r: Write Your Own Functions and Simulations. Sebastopol, California: O’Reilly Media. https://rstudio-education.github.io/hopr/.\n\n\nGrolemund, Garrett, and Hadley Wickham. 2016. R for Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz/.\n\n\nLong, JD, and Paul Teetor. 2019. R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics. Second. Sebastopol, California: O’Reilly Media. https://rc2e.com/.\n\n\nMcmanus, Ian, and Paul Gesiak. 2014. “Experimenting with Mondrian: Comparing the Method of Production with the Method of Choice.” In. https://doi.org/10.13140/2.1.1561.2967.\n\n\nSilge, Julia, and David Robinson. 2017. Text Mining with r: A Tidy Approach. Sebastopol, California: O’Reilly Media. https://www.tidytextmining.com/.\n\n\nVenables, W. N., D. M. Smith, and the R Core Team. 2021. An Introduction to r. https://cran.r-project.org/doc/manuals/R-intro.pdf.\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures. Sebastopol, California: O’Reilly Media. https://clauswilke.com/dataviz/.\n\n\nXie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. R Markdown: The Definitive Guide. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown.\n\n\nXie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.\n\n\nZinovyev, iAndrei. 2010. “Data Visualization in Political and Social Sciences.” In. https://arxiv.org/abs/1008.1188."
+  },
+  {
+    "objectID": "intro.html#contact",
+    "href": "intro.html#contact",
+    "title": "1  Introduction",
+    "section": "Contact",
+    "text": "Contact\nThis book is in open review. If you have any questions, comments or suggestions; please contact me by email."
+  },
+  {
+    "objectID": "intro.html#license",
+    "href": "intro.html#license",
+    "title": "1  Introduction",
+    "section": "License",
+    "text": "License\nData Visualization for International Relations by Alfredo Hernandez Sanchez is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.Based on a work at https://github.com/alhdzsz/data_viz_ir.\n\n\n\n\nChang, Winston. 2018. R Graphics Cookbook: Practical Recipes for Visualizing Data. Second. Sebastopol, California: O’Reilly Media. https://r-graphics.org/.\n\n\nGillespie, Colin, and Robin Lovelace. 2016. Efficient r Programming: A Practical Guide to Smarter Programming. Sebastopol, California: O’Reilly Media. https://csgillespie.github.io/efficientR/.\n\n\nGrolemund, Garrett. 2014. Hands-on Programming with r: Write Your Own Functions and Simulations. Sebastopol, California: O’Reilly Media. https://rstudio-education.github.io/hopr/.\n\n\nGrolemund, Garrett, and Hadley Wickham. 2016. R for Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz/.\n\n\nLong, JD, and Paul Teetor. 2019. R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics. Second. Sebastopol, California: O’Reilly Media. https://rc2e.com/.\n\n\nMcmanus, Ian, and Paul Gesiak. 2014. “Experimenting with Mondrian: Comparing the Method of Production with the Method of Choice.” In. https://doi.org/10.13140/2.1.1561.2967.\n\n\nSilge, Julia, and David Robinson. 2017. Text Mining with r: A Tidy Approach. Sebastopol, California: O’Reilly Media. https://www.tidytextmining.com/.\n\n\nVenables, W. N., D. M. Smith, and the R Core Team. 2021. An Introduction to r. https://cran.r-project.org/doc/manuals/R-intro.pdf.\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures. Sebastopol, California: O’Reilly Media. https://clauswilke.com/dataviz/.\n\n\nXie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. R Markdown: The Definitive Guide. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown.\n\n\nXie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.\n\n\nZinovyev, iAndrei. 2010. “Data Visualization in Political and Social Sciences.” In. https://arxiv.org/abs/1008.1188."
+  },
+  {
+    "objectID": "intro.html#footnotes",
+    "href": "intro.html#footnotes",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "The pseudo-Mondrians were created by jittering all the lines in the original but keeping the same relative positions.↩︎\nFor Windows users, the %&gt;% shortcut in RStudio is Ctrl + Shift + M and for Mac users it is Cmd + Shift + M.↩︎\nFor a comprehensive list of R-related books, consult the R-Project Website↩︎"
+  },
+  {
+    "objectID": "summary.html#the-tidyverse-package",
+    "href": "summary.html#the-tidyverse-package",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.1 The tidyverse Package",
+    "text": "2.1 The tidyverse Package\nThroughout this course, we will be using tidy data principles1 to create several types of visualizations. The main package we will use is the tidyverse, which includes several useful tools for data wrangling, analysis and visualization. The first step then is to install the package! You can do this from the packages vignette in explorer pane in RStudio, or by writing install.packages(\"tidyverse\") into the console pane.\nOnce the package has been installed, the next step will be to load the library so that we can start using it! Simply write the command below in a script the editor pane and click run, or directly in the console pane and press enter.\n\nlibrary(tidyverse)\n\nAfter loading the tidyverse package from the library, we will get access to two very important functions which we will be using extensively. The first is the the command ggplot() which will allow us to make plots based on the grammar of graphics. The second is the pipe operator or %&gt;%, which translates loosely to the phrase “and then”, and which we will use to put several commands and functions together in a pipeline.2"
+  },
+  {
+    "objectID": "summary.html#the-ggplot2-package",
+    "href": "summary.html#the-ggplot2-package",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.2 The ggplot2 Package",
+    "text": "2.2 The ggplot2 Package\nThe ggplot2 package is installed and loaded alongside the tidyverse package, though it can also be called on separately. This is a very powerful tool to make print-quality graphs and all sorts of visual outputs. To do this, it draws on the grammar of graphics, which is a concept developed by Leland Wilkinson (Wilkinson 2005). The main idea behind this complex book is that plots can be divided into several elements, each with a specific role to play. ggplot2 has 7 such elements:\n\nData\nAesthetics\nLayers\nScales\nCoordinates\nFacets\nThemes\n\nThroughout this chapter, we will focus on the first three (Data, Aesthetics, Layers) which are the minimum requirements to make a basic plot. The element data tells R which vector(s) from your environment are going to be used to draw the plot. The aesthetics element determines which variable(s) will be used and in what capacity. The layers element tells R which type of geometry you wish to draw and in which order.\n\ndf %&gt;% \n  ggplot(aes(x=var1,y=var2))+\n  geom_point()\n\nIn the example above, we are telling R that there is an object df in our environment which has at least two vectors (columns), one called var1 and another var2. We are also telling it that we want var1 to be our x axis and var2 to be our y axis, we define this inside the aes() command either globally for the plot (i.e. inside the ggplot() command) or specifically for a layer (i.e. inside geom_point()). Finally, we are telling R that we want to make a scatter plot by defining the layer geom_point(). Notice that after the ggplot() command and until the end of the graph, we use a \\(+\\) sign."
+  },
+  {
+    "objectID": "summary.html#example",
+    "href": "summary.html#example",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.3 Example",
+    "text": "2.3 Example\nTo make our first ggplot plot, we will use the mtcars data set as an example.\n\ndata(\"mtcars\")\n\nThe cars data set has 32 observations and 11 variables. Once the data has been loaded, let’s use the pipe operator to do some cleaning. In the code below, we are creating a new object called df - a common way of naming data frames - and filling it with the mtcars data with some modifications. We are asking R to a) take the mtcars data, b) and then %&gt;% select four variables, c) and then %&gt;% give them new name. This pipeline is saved into the new object df.\n\ndf &lt;- mtcars %&gt;% \n  select(cyl, mpg, hp, am) %&gt;% \n  rename(cylinders=cyl,\n         mileage=mpg,\n         horsepower=hp,\n         transmission=am) \n\nWith this df stored in our environment, we can start making plots. Let’s begin with a histogram that shows the distribution of mileage across the 32 variables in our data set. For this we will use geom_histogram.\n\ndf %&gt;% #Our Data \n  ggplot(aes(x= mileage))+ #Our Aesthetics\n  geom_histogram() #Our Layer\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nA histogram with default settings\n\n\n\n\nFigure @ref(fig:hist-fig) shows us our very first ggplot, which shows the number of observations at each of the binned levels. From this plot we know that most cars in our data set do around 15 miles per gallon. However, it is not very nice looking! We can improve this by adding more parameters.\nYou might notice that below the code R is giving us a warning: stat_bin() using bins = 30. Pick better value with binwidth. Here the software is hinting that we might want to change the number of bars (bins) or their width (binwidth) in our plot to make it more informative.3 In figure @ref(fig:hist2-fig) we change the number of bins to 5 inside our geom_histogram layer, and also declare the color of the column fill (darkgray) and the outline (black).\n\ndf %&gt;% \n  ggplot(aes(x= mileage))+ \n  geom_histogram(bins = 5, fill=\"darkgray\", color=\"black\") \n\n\n\n\nA nicer looking histogram"
+  },
+  {
+    "objectID": "summary.html#choosing-the-right-plot",
+    "href": "summary.html#choosing-the-right-plot",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.4 Choosing the Right Plot",
+    "text": "2.4 Choosing the Right Plot\nThere are many geoms available in the ggplot2 package and the many other packages that interact with it. The choice of which one to use largely depends on two questions: a) what are you trying to communicate?, and b) what type of variable(s) do you want to show?\n\n\n\n\nSome plot options based on variables types\n\n\nFigure @ref(fig:flow-fig) shows some of the possible plot choices based on the type of variables that you are working with. This is by no means a comprehensive menu of plotting options. For more geoms and when to use them, check out from Data to Viz.\n\n\n\n\nWilkinson, Leland. 2005. The Grammar of Graphics. 2nd ed. New York: Springer-Verlag. https://www.springer.com/gp/book/9780387245447."
+  },
+  {
+    "objectID": "summary.html#footnotes",
+    "href": "summary.html#footnotes",
+    "title": "2  The Grammar of Graphics",
+    "section": "",
+    "text": "These principles are: a) each variable should have its own column, b) each observation should have its own row, and c) each value should have its own cell.↩︎\nFor Windows users, you can use the RStudio short cut ctrl + shift + m to write this pipe %&gt;% operator.↩︎\nMost other software will give you a default based on some parameter such as the Freedman-Diaconis rule, ggplot does not do this, forcing you to experiment with different parameters that best reflect your data.↩︎"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Data Visualization for Social Science",
+    "section": "Contact",
+    "text": "Contact\nThis book is in open review. If you have any questions, comments or suggestions; please contact me by email or report an issue on GitHub."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Data Visualization for Social Science",
+    "section": "License",
+    "text": "License\nData Visualization for Social Science by Alfredo Hernandez Sanchez is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.Based on a work at https://github.com/alhdzsz/dviz_book."
+  },
+  {
+    "objectID": "ggbasics.html#the-tidyverse-package",
+    "href": "ggbasics.html#the-tidyverse-package",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.1 The tidyverse Package",
+    "text": "2.1 The tidyverse Package\nThroughout this course, we will be using tidy data principles1 to create several types of visualizations. The main package we will use is the tidyverse, which includes several useful tools for data wrangling, analysis and visualization. The first step then is to install the package! You can do this from the packages vignette in explorer pane in RStudio, or by writing install.packages(\"tidyverse\") into the console pane.\nOnce the package has been installed, the next step will be to load the library so that we can start using it! Simply write the command below in a script the editor pane and click run, or directly in the console pane and press enter.\n\nlibrary(tidyverse)\n\nAfter loading the tidyverse package from the library, we will get access to two very important functions which we will be using extensively. The first is the the command ggplot() which will allow us to make plots based on the grammar of graphics. The second is the pipe operator or %&gt;%, which translates loosely to the phrase “and then”, and which we will use to put several commands and functions together in a pipeline.2"
+  },
+  {
+    "objectID": "ggbasics.html#the-ggplot2-package",
+    "href": "ggbasics.html#the-ggplot2-package",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.2 The ggplot2 Package",
+    "text": "2.2 The ggplot2 Package\nThe ggplot2 package is installed and loaded alongside the tidyverse package, though it can also be called on separately. This is a very powerful tool to make print-quality graphs and all sorts of visual outputs. To do this, it draws on the grammar of graphics, which is a concept developed by Leland Wilkinson (Wilkinson 2005). The main idea behind this complex book is that plots can be divided into several elements, each with a specific role to play. ggplot2 has 7 such elements:\n\nData\nAesthetics\nLayers\nScales\nCoordinates\nFacets\nThemes\n\nThroughout this chapter, we will focus on the first three (Data, Aesthetics, Layers) which are the minimum requirements to make a basic plot. The element data tells R which vector(s) from your environment are going to be used to draw the plot. The aesthetics element determines which variable(s) will be used and in what capacity. The layers element tells R which type of geometry you wish to draw and in which order.\n\ndf %&gt;% \n  ggplot(aes(x=var1,y=var2))+\n  geom_point()\n\nIn the example above, we are telling R that there is an object df in our environment which has at least two vectors (columns), one called var1 and another var2. We are also telling it that we want var1 to be our x axis and var2 to be our y axis, we define this inside the aes() command either globally for the plot (i.e. inside the ggplot() command) or specifically for a layer (i.e. inside geom_point()). Finally, we are telling R that we want to make a scatter plot by defining the layer geom_point(). Notice that after the ggplot() command and until the end of the graph, we use a \\(+\\) sign."
+  },
+  {
+    "objectID": "ggbasics.html#example",
+    "href": "ggbasics.html#example",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.3 Example",
+    "text": "2.3 Example\nTo make our first ggplot plot, we will use the mtcars data set as an example.\n\ndata(\"mtcars\")\n\nThe cars data set has 32 observations and 11 variables. Once the data has been loaded, let’s use the pipe operator to do some cleaning. In the code below, we are creating a new object called df - a common way of naming data frames - and filling it with the mtcars data with some modifications. We are asking R to a) take the mtcars data, b) and then %&gt;% select four variables, c) and then %&gt;% give them new name. This pipeline is saved into the new object df.\n\ndf &lt;- mtcars %&gt;% \n  select(cyl, mpg, hp, am) %&gt;% \n  rename(cylinders=cyl,\n         mileage=mpg,\n         horsepower=hp,\n         transmission=am) \n\nWith this df stored in our environment, we can start making plots. Let’s begin with a histogram that shows the distribution of mileage across the 32 variables in our data set. For this we will use geom_histogram.\n\ndf %&gt;% #Our Data \n  ggplot(aes(x= mileage))+ #Our Aesthetics\n  geom_histogram() #Our Layer\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nA histogram with default settings\n\n\n\n\nFigure @ref(fig:hist-fig) shows us our very first ggplot, which shows the number of observations at each of the binned levels. From this plot we know that most cars in our data set do around 15 miles per gallon. However, it is not very nice looking! We can improve this by adding more parameters.\nYou might notice that below the code R is giving us a warning: stat_bin() using bins = 30. Pick better value with binwidth. Here the software is hinting that we might want to change the number of bars (bins) or their width (binwidth) in our plot to make it more informative.3 In figure @ref(fig:hist2-fig) we change the number of bins to 5 inside our geom_histogram layer, and also declare the color of the column fill (darkgray) and the outline (black).\n\ndf %&gt;% \n  ggplot(aes(x= mileage))+ \n  geom_histogram(bins = 5, fill=\"darkgray\", color=\"black\") \n\n\n\n\nA nicer looking histogram"
+  },
+  {
+    "objectID": "ggbasics.html#choosing-the-right-plot",
+    "href": "ggbasics.html#choosing-the-right-plot",
+    "title": "2  The Grammar of Graphics",
+    "section": "2.4 Choosing the Right Plot",
+    "text": "2.4 Choosing the Right Plot\nThere are many geoms available in the ggplot2 package and the many other packages that interact with it. The choice of which one to use largely depends on two questions: a) what are you trying to communicate?, and b) what type of variable(s) do you want to show?\n\n\n\n\nSome plot options based on variables types\n\n\nFigure @ref(fig:flow-fig) shows some of the possible plot choices based on the type of variables that you are working with. This is by no means a comprehensive menu of plotting options. For more geoms and when to use them, check out from Data to Viz.\n\n\n\n\nWilkinson, Leland. 2005. The Grammar of Graphics. 2nd ed. New York: Springer-Verlag. https://www.springer.com/gp/book/9780387245447."
+  },
+  {
+    "objectID": "ggbasics.html#footnotes",
+    "href": "ggbasics.html#footnotes",
+    "title": "2  The Grammar of Graphics",
+    "section": "",
+    "text": "These principles are: a) each variable should have its own column, b) each observation should have its own row, and c) each value should have its own cell.↩︎\nFor Windows users, you can use the RStudio short cut ctrl + shift + m to write this pipe %&gt;% operator.↩︎\nMost other software will give you a default based on some parameter such as the Freedman-Diaconis rule, ggplot does not do this, forcing you to experiment with different parameters that best reflect your data.↩︎"
+  }
+]

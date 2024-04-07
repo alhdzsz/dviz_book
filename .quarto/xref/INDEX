@@ -1,0 +1,17 @@
+{
+  "index.qmd": {
+    "index.html": "7fa6effc"
+  },
+  "intro.qmd": {
+    "intro.html": "b8fa29c7"
+  },
+  "summary.qmd": {
+    "summary.html": "2f4c1615"
+  },
+  "references.qmd": {
+    "references.html": "bb29d482"
+  },
+  "ggbasics.qmd": {
+    "ggbasics.html": "17f2f940"
+  }
+}

@@ -1,0 +1,29 @@
+project:
+  type: book
+
+book:
+  title: "Data Visualization for Social Science"
+  subtitle: "Using R!"
+  author: "Alfredo Hernandez Sanchez, PhD"
+  date: "4/5/2024"
+  reader-mode: true
+  repo-url: "https://github.com/alhdzsz/data_viz_ir"
+  repo-actions: [issue]
+  sidebar: 
+    logo: "icon.png"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - ggbasics.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: source
+

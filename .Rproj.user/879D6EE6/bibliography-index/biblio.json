@@ -1,0 +1,510 @@
+{
+    "sources": [
+        {
+            "DOI": "10.1093/comjnl/27.2.97",
+            "ISSN": "0010-4620",
+            "URL": "https://doi.org/10.1093/comjnl/27.2.97",
+            "author": [
+                {
+                    "family": "Knuth",
+                    "given": "Donald E."
+                }
+            ],
+            "container-title": "Comput. J.",
+            "id": "knuth84",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1984,
+                        5
+                    ]
+                ]
+            },
+            "page": "97-111",
+            "publisher": "Oxford University Press, Inc.",
+            "publisher-place": "USA",
+            "title": "Literate programming",
+            "type": "article-journal",
+            "volume": "27"
+        },
+        {
+            "DOI": "10.1093/actrade/9780198182900.book.1",
+            "URL": "http://dx.doi.org/10.1093/actrade/9780198182900.book.1",
+            "author": [
+                {
+                    "family": "Shakespeare",
+                    "given": "William"
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Richard"
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Wells",
+                    "given": "Stanley"
+                },
+                {
+                    "family": "Taylor",
+                    "given": "Gary"
+                }
+            ],
+            "id": "shakespeare2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000,
+                        10,
+                        26
+                    ]
+                ]
+            },
+            "publisher": "Oxford University Press",
+            "title": "The oxford shakespeare: The history of king lear: The 1608 quarto",
+            "title-short": "The oxford shakespeare",
+            "type": "book"
+        },
+        {
+            "URL": "http://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "xie2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.springer.com/gp/book/9780387245447",
+            "author": [
+                {
+                    "family": "Wilkinson",
+                    "given": "Leland"
+                }
+            ],
+            "edition": "2nd",
+            "id": "wilkinson2005",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1-4419-2033-1",
+            "publisher": "Springer-Verlag",
+            "publisher-place": "New York",
+            "title": "The grammar of graphics",
+            "type": "book"
+        },
+        {
+            "DOI": "10.13140/2.1.1561.2967",
+            "author": [
+                {
+                    "family": "Mcmanus",
+                    "given": "Ian"
+                },
+                {
+                    "family": "Gesiak",
+                    "given": "Paul"
+                }
+            ],
+            "id": "mcmanus2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        6
+                    ]
+                ]
+            },
+            "title": "Experimenting with mondrian: Comparing the method of production with the method of choice",
+            "title-short": "Experimenting with mondrian",
+            "type": "paper-conference"
+        },
+        {
+            "URL": "https://jfly.uni-koeln.de/color/",
+            "author": [
+                {
+                    "family": "Okabe",
+                    "given": "Masataka"
+                },
+                {
+                    "family": "Ito",
+                    "given": "Kei"
+                }
+            ],
+            "id": "okabe2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002,
+                        11
+                    ]
+                ]
+            },
+            "title": "Color universal design (CUD) - how to make figures and presentations that are friendly to colorblind people -",
+            "type": "paper-conference"
+        },
+        {
+            "DOI": "https://doi.org/10.1002/col.22165",
+            "author": [
+                {
+                    "family": "Zhang",
+                    "given": "Tengxiao"
+                },
+                {
+                    "family": "Feng",
+                    "given": "Shiyu"
+                },
+                {
+                    "family": "Han",
+                    "given": "Buxin"
+                },
+                {
+                    "family": "Sun",
+                    "given": "Si"
+                }
+            ],
+            "container-title": "Color Research & Application",
+            "id": "zhang2018",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "keyword": "color preference, competitive context, ecological object, red",
+            "page": "114-118",
+            "title": "Red color in flags: A signal for competition",
+            "title-short": "Red color in flags",
+            "type": "article-journal",
+            "volume": "43"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/rmarkdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "xie2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "ISBN 9781138359338",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown: The definitive guide",
+            "title-short": "R markdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/rmarkdown-cookbook",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "Riederer",
+                    "given": "Emily"
+                }
+            ],
+            "id": "xie2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "ISBN 9780367563837",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown cookbook",
+            "type": "book"
+        },
+        {
+            "URL": "https://rc2e.com/",
+            "author": [
+                {
+                    "family": "Long",
+                    "given": "JD"
+                },
+                {
+                    "family": "Teetor",
+                    "given": "Paul"
+                }
+            ],
+            "edition": "Second",
+            "id": "long2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "note": "ISBN 9781492040682",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "R cookbook: Proven recipes for data analysis, statistics, and graphics",
+            "title-short": "R cookbook",
+            "type": "book"
+        },
+        {
+            "URL": "https://r4ds.had.co.nz/",
+            "author": [
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "wickham2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "ISBN 9781491910399",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "R for data science",
+            "type": "book"
+        },
+        {
+            "URL": "https://r-graphics.org/",
+            "author": [
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                }
+            ],
+            "edition": "Second",
+            "id": "chang2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "ISBN 9781491978603",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "R graphics cookbook: Practical recipes for visualizing data",
+            "title-short": "R graphics cookbook",
+            "type": "book"
+        },
+        {
+            "URL": "https://csgillespie.github.io/efficientR/",
+            "author": [
+                {
+                    "family": "Gillespie",
+                    "given": "Colin"
+                },
+                {
+                    "family": "Lovelace",
+                    "given": "Robin"
+                }
+            ],
+            "id": "lovelace2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "ISBN 9781491950784",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "Efficient r programming: A practical guide to smarter programming",
+            "title-short": "Efficient r programming",
+            "type": "book"
+        },
+        {
+            "URL": "https://clauswilke.com/dataviz/",
+            "author": [
+                {
+                    "family": "Wilke",
+                    "given": "Claus O."
+                }
+            ],
+            "id": "wilke2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "note": "ISBN 9781492031086",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "Fundamentals of data visualization: A primer on making informative and compelling figures",
+            "title-short": "Fundamentals of data visualization",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.tidytextmining.com/",
+            "author": [
+                {
+                    "family": "Silge",
+                    "given": "Julia"
+                },
+                {
+                    "family": "Robinson",
+                    "given": "David"
+                }
+            ],
+            "id": "silge2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "note": "ISBN 9781491981658",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "Text mining with r: A tidy approach",
+            "title-short": "Text mining with r",
+            "type": "book"
+        },
+        {
+            "URL": "https://rstudio-education.github.io/hopr/",
+            "author": [
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "grolemund2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "ISBN 9781449359010",
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Sebastopol, California",
+            "title": "Hands-on programming with r: Write your own functions and simulations",
+            "title-short": "Hands-on programming with r",
+            "type": "book"
+        },
+        {
+            "URL": "https://cran.r-project.org/doc/manuals/R-intro.pdf",
+            "author": [
+                {
+                    "family": "Venables",
+                    "given": "W. N."
+                },
+                {
+                    "family": "Smith",
+                    "given": "D. M."
+                },
+                {
+                    "dropping-particle": "the",
+                    "family": "R Core Team"
+                }
+            ],
+            "id": "venables21",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "version 4.1.1",
+            "title": "An introduction to r",
+            "type": "book"
+        },
+        {
+            "URL": "https://arxiv.org/abs/1008.1188",
+            "author": [
+                {
+                    "dropping-particle": "iAndrei",
+                    "family": "Zinovyev"
+                }
+            ],
+            "id": "zinovyev2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "title": "Data visualization in political and social sciences",
+            "type": "paper-conference"
+        },
+        {
+            "URL": "https://bookdown.org/hneth/ds4psy/",
+            "author": [
+                {
+                    "family": "Neth",
+                    "given": "Hansjörg"
+                }
+            ],
+            "id": "neth21",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "title": "Data science for psychologists",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

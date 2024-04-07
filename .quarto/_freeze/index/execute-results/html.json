@@ -1,0 +1,14 @@
+{
+  "hash": "ddd08095e679062bba8a6a612c401c00",
+  "result": {
+    "markdown": "<hr>\n\n<center>\n\n<figure>\n\n<img src=\"cover.png\" alt=\"Description of the image\"/>\n\n<figcaption>Book cover made using DALLE.</figcaption>\n\n</figure>\n\n</center>\n\n<br>\n\n# Preface {.unnumbered}\n\nThis is a Quarto book. I used quarto [@shakespeare2000]\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

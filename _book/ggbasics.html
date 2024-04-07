@@ -114,10 +114,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="site_libs/viz-1.8.2/viz.js"></script>
-<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="site_libs/grViz-binding-1.0.10/grViz.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -153,7 +149,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Visualization for Social Science</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/alhdzsz/data_viz_ir" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/alhdzsz/dviz_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -206,9 +202,8 @@ div.csl-indent {
   <li><a href="#the-tidyverse-package" id="toc-the-tidyverse-package" class="nav-link active" data-scroll-target="#the-tidyverse-package"><span class="header-section-number">2.1</span> The <code>tidyverse</code> Package</a></li>
   <li><a href="#the-ggplot2-package" id="toc-the-ggplot2-package" class="nav-link" data-scroll-target="#the-ggplot2-package"><span class="header-section-number">2.2</span> The <code>ggplot2</code> Package</a></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2.3</span> Example</a></li>
-  <li><a href="#choosing-the-right-plot" id="toc-choosing-the-right-plot" class="nav-link" data-scroll-target="#choosing-the-right-plot"><span class="header-section-number">2.4</span> Choosing the Right Plot</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/alhdzsz/data_viz_ir/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -306,18 +301,68 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</section>
-<section id="choosing-the-right-plot" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="choosing-the-right-plot"><span class="header-section-number">2.4</span> Choosing the Right Plot</h2>
-<p>There are many <code>geoms</code> available in the <code>ggplot2</code> package and the many other packages that interact with it. The choice of which one to use largely depends on two questions: a) what are you trying to communicate?, and b) what type of variable(s) do you want to show?</p>
-<div class="cell" data-layout-align="center" data-fig.asp="0.75">
-<div class="cell-output-display">
-<div id="htmlwidget-8fd803f454614540c39f" style="width:100%;height:216px;" class="grViz html-widget "></div>
-<script type="application/json" data-for="htmlwidget-8fd803f454614540c39f">{"x":{"diagram":"digraph flowchart {\n      \n      #General Layout Parameters\n      graph[overlap=T, \n      ranksep = 0.2]\n      \n      # Top Node\n      node [fontname = Helvetica, shape = plaintext]\n      q [label = \"What type of variable(s) are you working with?\", fontsize = 25]\n\n      # Variable Nodes\n      node [fontname = Helvetica, shape = folder, style=filled, fillcolor=linen]    \n      n [label = \"One Numeric \n Variable\"]\n      c [label = \"One Categorical \n Variable\"]\n      nn [label = \"Two Numeric \n Variables\"]\n      cc [label = \"Two Categorical \n Variables\"]\n      nc [label = \"One Numeric \n One Categorical\"]\n      v3 [label = \"Three+ \n Variables\"]\n\n      # Plot Nodes\n      node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=khaki1]          \n      hist [label = \"Histogram\"]\n      dens [label = \"Density \n Plot\"]\n      box [label = \"Boxplot\"]\n      violin [label = \"Violin \n Plot\"]\n      node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=snow3]\n      bubble [label = \"Bubble \n Plot\"]\n      line [label = \"Line \n Plot\"]\n      node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=rosybrown2]\n      bar [label = \"Bar \n Plot\"]\n      tree [label = \"Tree \n Map\"]\n      node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=skyblue2]\n      point [label = \"Scatter \n Plot\"]\n      area [label = \"Area \n Plot\"]\n\n      # edge general parameters\n      edge[minlen = 2]\n      q -> n;\n      q -> c;\n      q -> nn;\n      q -> cc;\n      q -> nc;\n      q -> v3;\n      n -> hist;\n      n -> dens;\n      nc -> box;\n      nc -> violin;\n      c -> bar;\n      c -> tree;\n      cc -> tree;\n      cc -> bar;\n      nn -> point;\n      nn -> line;\n      v3 -> area;\n      v3 -> point;\n      v3 -> bubble;\n\n      # rank of nodes for better display\n      {rank = min; q}\n      {rank = same; n; c}\n      {rank = same; nn; cc; nc}\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<p>Some plot options based on variables types</p>
-</div>
-</div>
-<p>Figure @ref(fig:flow-fig) shows some of the possible plot choices based on the type of variables that you are working with. This is by no means a comprehensive menu of plotting options. For more <code>geoms</code> and when to use them, check out <a href="https://www.data-to-viz.com/#explore">from Data to Viz</a>.</p>
+<!-- ## Choosing the Right Plot -->
+<!-- There are many `geoms` available in the `ggplot2` package and the many other packages that interact with it. The choice of which one to use largely depends on two questions: a) what are you trying to communicate?, and b) what type of variable(s) do you want to show? -->
+<!-- ```{r flow-fig, fig.align='center', fig.asp=.75, fig.cap="Some plot options based on variables types", out.width='80%', out.height='70%', echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- DiagrammeR::grViz("digraph flowchart { -->
+<!--       #General Layout Parameters -->
+<!--       graph[overlap=T,  -->
+<!--       ranksep = 0.2] -->
+<!--       # Top Node -->
+<!--       node [fontname = Helvetica, shape = plaintext] -->
+<!--       q [label = 'What type of variable(s) are you working with?', fontsize = 25] -->
+<!--       # Variable Nodes -->
+<!--       node [fontname = Helvetica, shape = folder, style=filled, fillcolor=linen]     -->
+<!--       n [label = 'One Numeric \n Variable'] -->
+<!--       c [label = 'One Categorical \n Variable'] -->
+<!--       nn [label = 'Two Numeric \n Variables'] -->
+<!--       cc [label = 'Two Categorical \n Variables'] -->
+<!--       nc [label = 'One Numeric \n One Categorical'] -->
+<!--       v3 [label = 'Three+ \n Variables'] -->
+<!--       # Plot Nodes -->
+<!--       node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=khaki1]           -->
+<!--       hist [label = 'Histogram'] -->
+<!--       dens [label = 'Density \n Plot'] -->
+<!--       box [label = 'Boxplot'] -->
+<!--       violin [label = 'Violin \n Plot'] -->
+<!--       node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=snow3] -->
+<!--       bubble [label = 'Bubble \n Plot'] -->
+<!--       line [label = 'Line \n Plot'] -->
+<!--       node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=rosybrown2] -->
+<!--       bar [label = 'Bar \n Plot'] -->
+<!--       tree [label = 'Tree \n Map'] -->
+<!--       node [fontname = Helvetica, shape = cylinder, style=filled, fillcolor=skyblue2] -->
+<!--       point [label = 'Scatter \n Plot'] -->
+<!--       area [label = 'Area \n Plot'] -->
+<!--       # edge general parameters -->
+<!--       edge[minlen = 2] -->
+<!--       q -> n; -->
+<!--       q -> c; -->
+<!--       q -> nn; -->
+<!--       q -> cc; -->
+<!--       q -> nc; -->
+<!--       q -> v3; -->
+<!--       n -> hist; -->
+<!--       n -> dens; -->
+<!--       nc -> box; -->
+<!--       nc -> violin; -->
+<!--       c -> bar; -->
+<!--       c -> tree; -->
+<!--       cc -> tree; -->
+<!--       cc -> bar; -->
+<!--       nn -> point; -->
+<!--       nn -> line; -->
+<!--       v3 -> area; -->
+<!--       v3 -> point; -->
+<!--       v3 -> bubble; -->
+<!--       # rank of nodes for better display -->
+<!--       {rank = min; q} -->
+<!--       {rank = same; n; c} -->
+<!--       {rank = same; nn; cc; nc} -->
+<!--       } -->
+<!--       ", height =  250, width = 750)  -->
+<!-- ``` -->
+<!-- Figure ABOVE shows some of the possible plot choices based on the type of variables that you are working with. This is by no means a comprehensive menu of plotting options. For more `geoms` and when to use them, check out [from Data to Viz](https://www.data-to-viz.com/#explore). -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

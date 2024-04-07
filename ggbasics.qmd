@@ -4,7 +4,7 @@
 
 Throughout this course, we will be using tidy data principles[^ggbasics-1] to create several types of visualizations. The main package we will use is the `tidyverse`, which includes several useful tools for data wrangling, analysis and visualization. The first step then is to install the package! You can do this from the packages vignette in *explorer pane* in RStudio, or by writing `install.packages("tidyverse")` into the *console pane*.
 
-[^ggbasics-1]: These principles are: a) each variable should have its own column, b) each observation should have its own row, and c) each value should have its own cell.
+[^ggbasics-1]: These principles are: a) each variable should have its own column, b) each observation should have its own row, and c) each value should have its own cell. 
 
 Once the package has been installed, the next step will be to load the library so that we can start using it! Simply write the command below in a script the *editor pane* and click *run*, or directly in the *console pane* and press *enter*.
 

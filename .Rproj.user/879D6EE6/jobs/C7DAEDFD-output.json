@@ -7,3 +7,6 @@
 [1,"\u001B[32mGET: /intro.html\u001B[39m\n"]
 [1,"\u001B[32mGET: /references.html\u001B[39m\n"]
 [1,"\u001B[32mGET: /\u001B[39m\n"]
+[1,"\u001B[1mpandoc \u001B[22m\n  to: html\n  output-file: index.html\n  standalone: true\n  toc: true\n  number-sections: false\n  title-prefix: Data Visualization for Social Science\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  \n\u001B[1mmetadata\u001B[22m\n  crossref:\n    chapters: true\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  bibliography:\n    - references.bib\n  editor: source\n  theme: cosmo\n  title: Data Visualization for Social Science\n  subtitle: Using R!\n  author: 'Alfredo Hernandez Sanchez, PhD'\n  date: 4/5/2024\n  \n"]
+[1,"Output created: _book/index.html\n\n\u001B[32mWatching files for changes\u001B[39m\n"]
+[1,"\u001B[32mGET: /\u001B[39m\n"]

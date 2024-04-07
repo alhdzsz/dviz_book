@@ -16,7 +16,7 @@
 
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This is a Quarto book...
 
 ## Contact {.unnumbered}
 

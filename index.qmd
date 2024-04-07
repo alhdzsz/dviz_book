@@ -1,22 +1,22 @@
-<hr>
+<!-- <hr> -->
 
-<center>
+<!-- <center> -->
 
-<figure>
+<!-- <figure> -->
 
-<img src="cover.png" alt="Description of the image"/>
+<!-- <img src="cover.png" alt="Description of the image"/> -->
 
-<figcaption>Book cover made using DALLE.</figcaption>
+<!-- <figcaption>Book cover made using DALLE.</figcaption> -->
 
-</figure>
+<!-- </figure> -->
 
-</center>
+<!-- </center> -->
 
-<br>
+<!-- <br> -->
 
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
-This is a Quarto book...
+Welcome to the online version of “Data Visualization for Social Science” by <a href="https://alhdzsz.net/" target="_blank">Alfredo Hernandez Sanchez</a>. This book offers a gentle introduction to data visualization using R and -- occasionally -- python. In this book you will learn how to make beautiful, informative, and reproducible visualizations with examples from different social sciences. 
 
 ## Contact {.unnumbered}
 

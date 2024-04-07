@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Visualization for Social Science",
     "section": "",
-    "text": "Preface\nThis is a Quarto book…"
+    "text": "Welcome\nWelcome to the online version of “Data Visualization for Social Science” by Alfredo Hernandez Sanchez. This book offers a gentle introduction to data visualization using R and – occasionally – python. In this book you will learn how to make beautiful, informative, and reproducible visualizations with examples from different social sciences."
   },
   {
     "objectID": "index.html#contact",

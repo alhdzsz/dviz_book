@@ -1,26 +1,20 @@
-<!-- <hr> -->
-
-<!-- <center> -->
-
-<!-- <figure> -->
-
-<!-- <img src="cover.png" alt="Description of the image"/> -->
-
-<!-- <figcaption>Book cover made using DALLE.</figcaption> -->
-
-<!-- </figure> -->
-
-<!-- </center> -->
-
-<!-- <br> -->
 
 # Welcome {.unnumbered}
 
-Welcome to the online version of “Data Visualization for Social Science” by <a href="https://alhdzsz.net/" target="_blank">Alfredo Hernandez Sanchez</a>. This book offers a gentle introduction to data visualization using R and -- occasionally -- python. In this book you will learn how to make beautiful, informative, and reproducible visualizations with examples from different social sciences. 
+This book offers a gentle introduction to data visualization using R and -- occasionally -- python. In this book you will learn how to make beautiful, informative, and reproducible visualizations with examples from different social sciences. It is inspired by a course on Data Visualization that <a href="https://alhdzsz.net/" target="_blank">I</a> taught at the <a href="https://www.ibei.org/en" target="_blank">Barcelona Institute of International Studies</a>. Thus, a special thanks goes out to the many graduate students whose efforts, questions, and feedback helped greatly improve the content of this book!
 
 ## Contact {.unnumbered}
 
 This book is in open review. If you have any questions, comments or suggestions; please contact me by [email](mailto:alhdzsz@gmail.com) or report an issue on GitHub.
+
+## Build Information
+
+This book was built using `r version$version.string`. For specific package versions please see the session information below:
+
+```{r echo=FALSE}
+sessionInfo()
+```
+
 
 ## License {.unnumbered}
 

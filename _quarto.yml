@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Data Visualization for Social Science"
+  title: "Data Visualization for Social Scientists"
   subtitle: "Using R!"
   author: "Alfredo Hernandez Sanchez, PhD"
   date: "4/5/2024"
@@ -15,6 +15,7 @@ book:
     - index.qmd
     - intro.qmd
     - ggbasics.qmd
+    # - networks.qmd
     - references.qmd
 
 bibliography: references.bib

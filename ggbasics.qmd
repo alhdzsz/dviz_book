@@ -1,6 +1,6 @@
 # The Grammar of Graphics {#ggbasics}
 
-## The `tidyverse` Package
+## The `tidyverse` packages
 
 Throughout this course, we will be using tidy data principles[^ggbasics-1] to create several types of visualizations. The main package we will use is the `tidyverse`, which includes several useful tools for data wrangling, analysis and visualization. The first step then is to install the package! You can do this from the packages vignette in *explorer pane* in RStudio, or by writing `install.packages("tidyverse")` into the *console pane*.
 
@@ -8,17 +8,20 @@ Throughout this course, we will be using tidy data principles[^ggbasics-1] to cr
 
 Once the package has been installed, the next step will be to load the library so that we can start using it! Simply write the command below in a script the *editor pane* and click *run*, or directly in the *console pane* and press *enter*.
 
-```{r message=FALSE, warning=FALSE, paged.print=FALSE}
-library(tidyverse)
-```
-
-After loading the `tidyverse` package from the library, we will get access to two very important functions which we will be using extensively. The first is the the command `ggplot()` which will allow us to make plots based on the *grammar of graphics*. The second is the *pipe operator* or `%>%`, which translates loosely to the phrase "and then", and which we will use to put several commands and functions together in a pipeline.[^ggbasics-2]
+After installing `tidyverse` packages, we will get access to two very important functions which we will be using extensively. The first is the the command `ggplot()` from the package `ggplot2` which will allow us to make plots based on the *grammar of graphics*. The second is the *pipe operator* or `%>%` from the `dplyr` package, which translates loosely to the phrase "and then", and which we will use to put several commands and functions together in a pipeline.[^ggbasics-2]
 
 [^ggbasics-2]: For Windows users, you can use the RStudio short cut `ctrl` + `shift` + `m` to write this pipe `%>%` operator.
 
+At the top of every R script, you will see the libraries used. For almost every chapter of this book we will use the two libraries below. **IMPORTANT:** *every time you start a new R script or session, you must call on these libraries* so R knows which commands you want to use!
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+library(ggplot2)
+library(dplyr)
+```
+
 ## The `ggplot2` Package
 
-The `ggplot2` package is installed and loaded alongside the `tidyverse` package, though it can also be called on separately. This is a very powerful tool to make print-quality graphs and all sorts of visual outputs. To do this, it draws on *the grammar of graphics*, which is a concept developed by Leland Wilkinson [@wilkinson2005]. The main idea behind this complex book is that plots can be divided into several elements, each with a specific role to play. `ggplot2` has 7 such elements:
+The `ggplot2` package is installed and loaded alongside the `tidyverse` package, though it can -- and **should** -- be called on separately. This is a very powerful tool to make print-quality graphs and all sorts of visual outputs. To do this, it draws on *the grammar of graphics*, which is a concept developed by Leland Wilkinson [@wilkinson2005]. The main idea behind this complex book is that plots can be divided into several elements, each with a specific role to play. `ggplot2` has 7 such elements:
 
 -   **Data**
 -   **Aesthetics**
@@ -46,7 +49,18 @@ To make our first `ggplot` plot, we will use the `mtcars` data set as an example
 data("mtcars")
 ```
 
-The cars data set has `r nrow(mtcars)` observations and `r ncol(mtcars)` variables. Once the data has been loaded, let's use the `pipe operator` to do some cleaning. In the code below, we are creating a new object called `df` - a common way of naming data frames - and filling it with the `mtcars` data with some modifications. We are asking R to a) take the `mtcars` data, b) *and then* `%>%` *select* four variables, c) *and then* `%>%` give them new name. This pipeline is saved into the new object `df`.
+The cars data set has `r nrow(mtcars)` observations and `r ncol(mtcars)` variables. This data set comes pre-loaded with R and it often used in examples. Let's see what is inside!
+
+```{r tbl-mtcars, echo=FALSE, message=FALSE, warning=FALSE}
+#| tbl-cap: "The Motor Trend Car Road Tests Data Set"
+
+library(kableExtra)
+mtcars %>% 
+  kbl() %>% 
+  scroll_box(height = "300px")
+```
+
+Once the data has been loaded, let's use the `pipe operator` to do some cleaning. In the code below, we are creating a new object called `df` - a common way of naming data frames - and filling it with the `mtcars` data with some modifications. We are asking R to a) take the `mtcars` data, b) *and then* `%>%` *select* four variables, c) *and then* `%>%` give them new name. This pipeline is saved into the new object `df`.
 
 ```{r}
 df <- mtcars %>% 

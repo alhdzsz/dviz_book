@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Visualization for Social Science - 1&nbsp; Introduction</title>
+<title>1&nbsp; Introduction – Data Visualization for Social Scientists</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,17 +57,23 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -75,14 +82,42 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -92,13 +127,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -107,15 +142,15 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./icon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Visualization for Social Science</a> 
+      <a href="./">Data Visualization for Social Scientists</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/alhdzsz/dviz_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/alhdzsz/dviz_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -158,7 +193,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -171,7 +206,7 @@ div.csl-indent {
   <li><a href="#recommended-readings" id="toc-recommended-readings" class="nav-link" data-scroll-target="#recommended-readings">Recommended Readings</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -191,27 +226,30 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>In an experiment conducted by researchers from University College London <span class="citation" data-cites="mcmanus2014">(<a href="references.html#ref-mcmanus2014" role="doc-biblioref">Mcmanus and Gesiak 2014</a>)</span>, 277 participants were asked to look at several pairs of paintings: one of the pairs was an original by abstract painter Piet Mondrian, and the other was fake version that closely resembled it.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The participants where asked:</p>
 <blockquote class="blockquote">
 <p>When looking at the pictures you should decide overall which you thinks looks better, in that it looks nicer, it looks better organised, or it looks better balanced.</p>
 </blockquote>
-<p>The results suggested that people could identify the originals with some degree of accuracy (<span class="math inline">\(\mu\)</span> 54.7%, SE .40). In other words, reliably better than chance! The experiment aimed to compare two methods in <em>Empirical Aesthetics</em>: the method of choice and the method of production. This choice experiment “implies people know something about what makes a real Mondrian.” In other words, we have an <em>intuition</em> of proportion and beauty.</p>
-<div class="cell" data-layout-align="center" data-fig.asp="0.75" data-paged.print="false">
+<p>The results suggested that people could identify the originals with some degree of accuracy (<span class="math inline">\(\mu\)</span> 54.7%, SE .40). This experiment “implies people know something about what makes a real Mondrian.” In other words, we have an <em>intuition</em> of proportion and beauty.</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="intro_files/figure-html/mondrian-fig-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">An <em>attempt</em> at a Mondrian using <code>ggplot2</code></figcaption>
+<figcaption>An <em>attempt</em> at a Mondrian using <code>ggplot2</code></figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>One of the most fun things about data visualization is making things that are beautiful. In making them, you learn a lot about not just the patterns you are displaying, but the scope and limitations of the underlying data. Having taught courses on data viz for several years, I have found that there is a correlation between the effort put into making a plot beautiful and how accurately it conveys the intended message.</p>
 <section id="why-visualize" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="why-visualize">Why Visualize?</h2>
 <p>Data visualization plays numerous roles in the social sciences, from summarizing large amounts of information in a small space, to supporting claims about patterns and relationships among a vast array of indicators of human behavior.</p>
-<p>Zinovyev <span class="citation" data-cites="zinovyev2010">(<a href="references.html#ref-zinovyev2010" role="doc-biblioref">Zinovyev 2010</a>)</span> identifies four types of visualizations in political science:</p>
+<p><span class="citation" data-cites="zinovyev2010">Zinovyev (<a href="references.html#ref-zinovyev2010" role="doc-biblioref">2010</a>)</span> identifies four types of visualizations in political science:</p>
 <blockquote class="blockquote">
 <ul>
 <li><em>Statistical graphics and infographics</em> with extensive use of color, form, size, shape and style to superimpose many quantitative variables in the same chart or diagram</li>
@@ -220,22 +258,30 @@ div.csl-indent {
 <li>Projection of multidimensional data on low-dimensional screens with further visualization, <em>data cartography</em></li>
 </ul>
 </blockquote>
-<p>Throughout this book, we will cover examples of from all of these types of visuals.</p>
+<p>In addition, visualization is often the last part of a data analysis pipeline. To visualize a data set you must first answer some questions:</p>
+<ul>
+<li>What do I want to visualize?</li>
+<li>Where can I get the data?</li>
+<li>How should my data set look like?</li>
+<li>What is the data telling me?</li>
+</ul>
+<p>In other words, to create visualizations you must also know what data is (or not) out there (literature review), develop an intuition about what patterns you might find in it (research question/hypothesis), clean and wrangle lots of often messy data sets (methodology), create the visualization (results) and share it with your target audience (discussion). Think of the process as writing a small research paper. A single <code>.png</code> often speaks more than a thousand lines of code!</p>
 <section id="about-this-book" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="about-this-book">About this Book</h3>
-<p>If you are in the <a href="https://www.ibei.org/en/data-visualization_138263">Data Visualization</a> course at IBEI, you will need it. If you are not, it might be useful anyway!</p>
+<p>The examples used throughout this book are closely related to corruption since that is one of my main areas of interest. This also allows me to explore different types of data that social scientists are likely to encounter such as surveys, text, networks, geo-locations, administrative records (<em>Big Data</em>), and regression models.</p>
+<p>All used data is open source, though it often comes through APIs<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Sometimes, to access these data sets you need a <em>token</em> or <em>secret</em>. For obvious reasons, I will not share my own tokens here, but I will show you where the information you need should go in the code. When possible, I will also provide a clean version of the data used so you can experiment with it.</p>
 <p>To keep things as simple as possible, the book follows this syntax:</p>
 <ul>
 <li><code>packages</code> are placed inside a shaded box (e.g.&nbsp;<code>ggplot2</code>),</li>
 <li>common <code>functions()</code> are also inside a shaded box, and followed by parentheses (e.g.&nbsp;<code>mutate()</code> from <code>tidyverse</code> or <code>class()</code> from base R),</li>
 <li>less common <code>functions()</code> are the same, but the package is explicitly called <code>::</code> (e.g.&nbsp;<code>reshape2::melt()</code>),</li>
 <li>short R commands (e.g.&nbsp;<code>%in%</code>), are also shaded, non-R commands are in bold (e.g.&nbsp;<strong>Ctrl + p</strong>),</li>
-<li>the common <em>pipe</em> operator <code>%&gt;%</code> will be used when possible in the code<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (i.e., we will mostly use the <code>tidyverse</code> syntax over base R).</li>
+<li>the common <em>pipe</em> operator <code>%&gt;%</code> will be used when possible in the code<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (i.e., we will mostly use the <code>tidyverse</code> syntax over base R).</li>
 </ul>
 </section>
 <section id="recommended-readings" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="recommended-readings">Recommended Readings</h3>
-<p>You are not expected to have any familiarity with R at the beginning of the course, though some knowledge of statistics will be very helpful. We will cover the basics of working with R and <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> during the first few sessions. Some tutorial videos on the basics of working with RStudio are available <a href="">here</a>. Similarly, you may also consult the following open-source books on R:<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>This book does not expect a lot of familiarity with R or programming, though some knowledge of statistics will be very helpful. The appendix covers the basics of working with R and <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> during the first few sessions. Some tutorial videos on the basics of working with RStudio are available <a href="">here</a>. Similarly, you may also consult the following open-source books on R:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <ul>
 <li><a href="https://rc2e.com/"><em>R Cookbook</em></a> <span class="citation" data-cites="long2019">(<a href="references.html#ref-long2019" role="doc-biblioref">Long and Teetor 2019</a>)</span></li>
 <li><a href="https://r4ds.had.co.nz/"><em>R for Data Science</em></a> <span class="citation" data-cites="wickham2016">(<a href="references.html#ref-wickham2016" role="doc-biblioref">Grolemund and Wickham 2016</a>)</span></li>
@@ -250,7 +296,7 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-chang2018" class="csl-entry" role="listitem">
 Chang, Winston. 2018. <em>R Graphics Cookbook: Practical Recipes for Visualizing Data</em>. Second. Sebastopol, California: O’Reilly Media. <a href="https://r-graphics.org/">https://r-graphics.org/</a>.
 </div>
@@ -294,8 +340,9 @@ Zinovyev, iAndrei. 2010. <span>“Data Visualization in Political and Social Sci
 <hr>
 <ol>
 <li id="fn1"><p>The pseudo-Mondrians were created by jittering all the lines in the original but keeping the same relative positions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>For Windows users, the <code>%&gt;%</code> shortcut in RStudio is <strong>Ctrl + Shift + M</strong> and for Mac users it is <strong>Cmd + Shift + M</strong>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>For a comprehensive list of R-related books, consult the <em>R-Project</em> <a href="https://www.r-project.org/doc/bib/R-books.html">Website</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>API is short for <em>application programming interface</em> and it is a great way to get data directly from the source. Many data providers such as the World Bank offer APIs that connect directly to your R session.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For Windows users, the <code>%&gt;%</code> shortcut in RStudio is <strong>Ctrl + Shift + M</strong> and for Mac users it is <strong>Cmd + Shift + M</strong>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>For a comprehensive list of R-related books, consult the <em>R-Project</em> <a href="https://www.r-project.org/doc/bib/R-books.html">Website</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -335,18 +382,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -378,11 +414,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -392,8 +465,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -405,7 +487,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -449,6 +653,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -474,6 +679,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -535,12 +766,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Welcome">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ggbasics.html" class="pagination-link">
+      <a href="./ggbasics.html" class="pagination-link" aria-label="The Grammar of Graphics">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Grammar of Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -549,4 +780,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

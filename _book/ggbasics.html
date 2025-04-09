@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Visualization for Social Science - 2&nbsp; The Grammar of Graphics</title>
+<title>2&nbsp; The Grammar of Graphics – Data Visualization for Social Scientists</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -90,17 +91,23 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -109,14 +116,44 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -126,13 +163,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggbasics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Grammar of Graphics</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggbasics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Grammar of Graphics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -141,15 +178,15 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./icon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Visualization for Social Science</a> 
+      <a href="./">Data Visualization for Social Scientists</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/alhdzsz/dviz_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/alhdzsz/dviz_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -192,18 +229,18 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-tidyverse-package" id="toc-the-tidyverse-package" class="nav-link active" data-scroll-target="#the-tidyverse-package"><span class="header-section-number">2.1</span> The <code>tidyverse</code> Package</a></li>
+  <li><a href="#the-tidyverse-packages" id="toc-the-tidyverse-packages" class="nav-link active" data-scroll-target="#the-tidyverse-packages"><span class="header-section-number">2.1</span> The <code>tidyverse</code> packages</a></li>
   <li><a href="#the-ggplot2-package" id="toc-the-ggplot2-package" class="nav-link" data-scroll-target="#the-ggplot2-package"><span class="header-section-number">2.2</span> The <code>ggplot2</code> Package</a></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2.3</span> Example</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -223,20 +260,24 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<section id="the-tidyverse-package" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="the-tidyverse-package"><span class="header-section-number">2.1</span> The <code>tidyverse</code> Package</h2>
+
+<section id="the-tidyverse-packages" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-tidyverse-packages"><span class="header-section-number">2.1</span> The <code>tidyverse</code> packages</h2>
 <p>Throughout this course, we will be using tidy data principles<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to create several types of visualizations. The main package we will use is the <code>tidyverse</code>, which includes several useful tools for data wrangling, analysis and visualization. The first step then is to install the package! You can do this from the packages vignette in <em>explorer pane</em> in RStudio, or by writing <code>install.packages("tidyverse")</code> into the <em>console pane</em>.</p>
 <p>Once the package has been installed, the next step will be to load the library so that we can start using it! Simply write the command below in a script the <em>editor pane</em> and click <em>run</em>, or directly in the <em>console pane</em> and press <em>enter</em>.</p>
-<div class="cell" data-paged.print="false">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After installing <code>tidyverse</code> packages, we will get access to two very important functions which we will be using extensively. The first is the the command <code>ggplot()</code> from the package <code>ggplot2</code> which will allow us to make plots based on the <em>grammar of graphics</em>. The second is the <em>pipe operator</em> or <code>%&gt;%</code> from the <code>dplyr</code> package, which translates loosely to the phrase “and then”, and which we will use to put several commands and functions together in a pipeline.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>At the top of every R script, you will see the libraries used. For almost every chapter of this book we will use the two libraries below. <strong>IMPORTANT:</strong> <em>every time you start a new R script or session, you must call on these libraries</em> so R knows which commands you want to use!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>After loading the <code>tidyverse</code> package from the library, we will get access to two very important functions which we will be using extensively. The first is the the command <code>ggplot()</code> which will allow us to make plots based on the <em>grammar of graphics</em>. The second is the <em>pipe operator</em> or <code>%&gt;%</code>, which translates loosely to the phrase “and then”, and which we will use to put several commands and functions together in a pipeline.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
 <section id="the-ggplot2-package" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="the-ggplot2-package"><span class="header-section-number">2.2</span> The <code>ggplot2</code> Package</h2>
-<p>The <code>ggplot2</code> package is installed and loaded alongside the <code>tidyverse</code> package, though it can also be called on separately. This is a very powerful tool to make print-quality graphs and all sorts of visual outputs. To do this, it draws on <em>the grammar of graphics</em>, which is a concept developed by Leland Wilkinson <span class="citation" data-cites="wilkinson2005">(<a href="references.html#ref-wilkinson2005" role="doc-biblioref">Wilkinson 2005</a>)</span>. The main idea behind this complex book is that plots can be divided into several elements, each with a specific role to play. <code>ggplot2</code> has 7 such elements:</p>
+<p>The <code>ggplot2</code> package is installed and loaded alongside the <code>tidyverse</code> package, though it can – and <strong>should</strong> – be called on separately. This is a very powerful tool to make print-quality graphs and all sorts of visual outputs. To do this, it draws on <em>the grammar of graphics</em>, which is a concept developed by Leland Wilkinson <span class="citation" data-cites="wilkinson2005">(<a href="references.html#ref-wilkinson2005" role="doc-biblioref">Wilkinson 2005</a>)</span>. The main idea behind this complex book is that plots can be divided into several elements, each with a specific role to play. <code>ggplot2</code> has 7 such elements:</p>
 <ul>
 <li><strong>Data</strong></li>
 <li><strong>Aesthetics</strong></li>
@@ -260,7 +301,492 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The cars data set has 32 observations and 11 variables. Once the data has been loaded, let’s use the <code>pipe operator</code> to do some cleaning. In the code below, we are creating a new object called <code>df</code> - a common way of naming data frames - and filling it with the <code>mtcars</code> data with some modifications. We are asking R to a) take the <code>mtcars</code> data, b) <em>and then</em> <code>%&gt;%</code> <em>select</em> four variables, c) <em>and then</em> <code>%&gt;%</code> give them new name. This pipeline is saved into the new object <code>df</code>.</p>
+<p>The cars data set has 32 observations and 11 variables. This data set comes pre-loaded with R and it often used in examples. Let’s see what is inside!</p>
+<div class="cell">
+<div id="tbl-mtcars" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: The Motor Trend Car Road Tests Data Set
+</figcaption>
+<div aria-describedby="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; ">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mpg</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cyl</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">disp</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">hp</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">drat</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">wt</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">qsec</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vs</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">am</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">gear</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108.0</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225.0</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duster 360</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">15.84</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 240D</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">146.7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">3.69</td>
+<td style="text-align: right;">3.190</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 230</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">140.8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.150</td>
+<td style="text-align: right;">22.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 280</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 280C</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SE</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">4.070</td>
+<td style="text-align: right;">17.40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 450SL</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.730</td>
+<td style="text-align: right;">17.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SLC</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.780</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cadillac Fleetwood</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">472.0</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">2.93</td>
+<td style="text-align: right;">5.250</td>
+<td style="text-align: right;">17.98</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Continental</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">460.0</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.424</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">440.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">5.345</td>
+<td style="text-align: right;">17.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.200</td>
+<td style="text-align: right;">19.47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honda Civic</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">1.615</td>
+<td style="text-align: right;">18.52</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Toyota Corolla</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">71.1</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">19.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">2.465</td>
+<td style="text-align: right;">20.01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodge Challenger</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">318.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.520</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMC Javelin</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">304.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.435</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Camaro Z28</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">350.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.73</td>
+<td style="text-align: right;">3.840</td>
+<td style="text-align: right;">15.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pontiac Firebird</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">400.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">17.05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat X1-9</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">79.0</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porsche 914-2</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">4.43</td>
+<td style="text-align: right;">2.140</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lotus Europa</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">1.513</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ford Pantera L</td>
+<td style="text-align: right;">15.8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">351.0</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">3.170</td>
+<td style="text-align: right;">14.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferrari Dino</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.62</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">15.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maserati Bora</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">301.0</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">14.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">2.780</td>
+<td style="text-align: right;">18.60</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Once the data has been loaded, let’s use the <code>pipe operator</code> to do some cleaning. In the code below, we are creating a new object called <code>df</code> - a common way of naming data frames - and filling it with the <code>mtcars</code> data with some modifications. We are asking R to a) take the <code>mtcars</code> data, b) <em>and then</em> <code>%&gt;%</code> <em>select</em> four variables, c) <em>and then</em> <code>%&gt;%</code> give them new name. This pipeline is saved into the new object <code>df</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(cyl, mpg, hp, am) <span class="sc">%&gt;%</span> </span>
@@ -270,7 +796,7 @@ div.csl-indent {
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">transmission=</span>am) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>With this <code>df</code> stored in our environment, we can start making plots. Let’s begin with a histogram that shows the distribution of mileage across the 32 variables in our data set. For this we will use <code>geom_histogram</code>.</p>
-<div class="cell" data-layout-align="center" data-fig.asp="0.75">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="co">#Our Data </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> mileage))<span class="sc">+</span> <span class="co">#Our Aesthetics</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="co">#Our Layer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -281,14 +807,14 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ggbasics_files/figure-html/hist-fig-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">A histogram with default settings</figcaption>
+<figcaption>A histogram with default settings</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Figure @ref(fig:hist-fig) shows us our very first <strong>ggplot</strong>, which shows the number of observations at each of the binned levels. From this plot we know that most cars in our data set do around 15 miles per gallon. However, it is not very nice looking! We can improve this by adding more parameters.</p>
 <p>You might notice that below the code R is giving us a <strong>warning</strong>: <code>stat_bin() using bins = 30. Pick better value with binwidth.</code> Here the software is hinting that we might want to change the number of bars (<code>bins</code>) or their width (<code>binwidth</code>) in our plot to make it more informative.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In figure @ref(fig:hist2-fig) we change the number of bins to 5 inside our <code>geom_histogram</code> layer, and also declare the color of the column fill (darkgray) and the outline (black).</p>
-<div class="cell" data-layout-align="center" data-fig.asp="0.75">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> mileage))<span class="sc">+</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">"darkgray"</span>, <span class="at">color=</span><span class="st">"black"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -296,7 +822,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ggbasics_files/figure-html/hist2-fig-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">A nicer looking histogram</figcaption>
+<figcaption>A nicer looking histogram</figcaption>
 </figure>
 </div>
 </div>
@@ -365,7 +891,7 @@ div.csl-indent {
 <!-- Figure ABOVE shows some of the possible plot choices based on the type of variables that you are working with. This is by no means a comprehensive menu of plotting options. For more `geoms` and when to use them, check out [from Data to Viz](https://www.data-to-viz.com/#explore). -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-wilkinson2005" class="csl-entry" role="listitem">
 Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. 2nd ed. New York: Springer-Verlag. <a href="https://www.springer.com/gp/book/9780387245447">https://www.springer.com/gp/book/9780387245447</a>.
 </div>
@@ -416,18 +942,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -459,11 +974,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -473,8 +1025,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -486,7 +1047,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -530,6 +1213,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -555,6 +1239,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -616,12 +1326,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
+      <a href="./references.html" class="pagination-link" aria-label="References">
         <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -630,4 +1340,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alhdzsz/dviz_book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

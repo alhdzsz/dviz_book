@@ -1,0 +1,7 @@
+# Network Data
+
+Structures, hierarchies and networks are everywhere a social scientist may look. Society itself can be thought of as a very complex dynamic network were humans can be thought of as *nodes* and our many relationships can be represented as *edges*. More each day, new *dyadic* data sets allow social researchers to analyze the underlying structures of different types of social relationships -- economic, political, criminal -- across geographies, political boundaries, and time. 
+
+In this chapter we will start from the very basics of how to load and wrangle network data in R, how to perform some simple analysis, and how to visually display this now ubiquitous form of data. 
+
+
